@@ -13,3 +13,8 @@ def index():
     ]
     return render_template('index.html', sitename="JustStocks", navigation=nav)
 
+
+@app.route('/about')
+def about():
+    return render_template('index.html', sitename='My Sample', page="About")
+
