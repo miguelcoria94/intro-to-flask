@@ -1,6 +1,6 @@
 from flask import (Flask, render_template)
 from config import Config
-
+from sample_form import SampleForm
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -19,5 +19,6 @@ def about():
     return render_template('index.html', sitename='My Sample', page="About")
 @app.route('/form')
 def form():
-    return render_template('form.html')
+    form = SampleForm()
+    return render_template('form.html', form=form)
 
