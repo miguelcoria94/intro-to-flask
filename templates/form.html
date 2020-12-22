@@ -12,8 +12,9 @@
         {{ form.csrf_token }}
         <p>
             {{ form.name.label }}
-            {{ form.name() }}
+            {{ form.name(size=32) }}
         </p>
+        <p>{{ form.submit() }}</p>
     </form>
     <!-- form ends above -->
 </body>
