@@ -1,4 +1,4 @@
-from flask import (Flask, render_template)
+from flask import (Flask, render_template, redirect)
 from config import Config
 from sample_form import SampleForm
 
@@ -17,8 +17,10 @@ def index():
 @app.route('/about')
 def about():
     return render_template('index.html', sitename='My Sample', page="About")
-@app.route('/form')
+@app.route('/form', methods=['GET', 'POST'])
 def form():
     form = SampleForm()
+    if form.validate_on_submit():
+        return redirect('/')
     return render_template('form.html', form=form)
 
