@@ -17,4 +17,7 @@ def index():
 @app.route('/about')
 def about():
     return render_template('index.html', sitename='My Sample', page="About")
+@app.route('/form')
+def form():
+    return render_template('form.html')
 
