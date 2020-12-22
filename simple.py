@@ -13,6 +13,6 @@ def home():
 def about():
     return '<h1>About</h1>'
 
-@app.route('/item/<id>')
+@app.route('/item/<int:id>')
 def item(id):
     return f'<h1>Item {id}</h1>'
