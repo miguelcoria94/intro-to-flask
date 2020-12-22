@@ -16,3 +16,19 @@ def about():
 @app.route('/item/<int:id>')
 def item(id):
     return f'<h1>Item {id}</h1>'
+
+@app.before_request
+def before_request_function():
+    print("before_request is running")
+
+
+@app.after_request
+def after_request_function(response):
+    print("after_request is running")
+    return response
+
+
+@app.before_first_request
+def before_first_function():
+    print("before first request")
+
