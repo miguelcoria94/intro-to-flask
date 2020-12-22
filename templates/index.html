@@ -7,6 +7,13 @@
 
 <body>
     <h1>{{ sitename }}</h1>
+    <ul>
+  {% for item in navigation %}
+    <li>
+      <a href="{{ item.href }}">{{ item.caption }}</a>
+    </li>
+  {% endfor %}
+</ul>
     <h2>Home Page</h2>
     <p>Coming soon to a browser near you...</p>
 </body>

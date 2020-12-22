@@ -7,5 +7,9 @@ app.config.from_object(Config)
 
 @app.route('/')
 def index():
-    return render_template('index.html', sitename="JustStocks")
+    nav = [
+        {'href': 'https://appacademy.io', 'caption': 'App Academy'},
+        {'href': 'https://archive.or', 'caption': 'Internet Archive'},
+    ]
+    return render_template('index.html', sitename="JustStocks", navigation=nav)
 
